@@ -22,7 +22,7 @@
 - 🌙 **다크 모드** - 편안한 읽기 환경
 - 📱 **반응형 디자인** - 모바일/태블릿/데스크톱 지원
 
-## 🏗️ 프로젝트 구조 (Monorepo)
+<!-- ## 🏗️ 프로젝트 구조 (Monorepo)
 
 ```
 개발새발/
@@ -163,4 +163,4 @@ MIT License - 자유롭게 사용하세요!
 
 **Made with ❤️ for Developers**
 
-© 2024 개발새발. All rights reserved.
+© 2024 개발새발. All rights reserved. -->
