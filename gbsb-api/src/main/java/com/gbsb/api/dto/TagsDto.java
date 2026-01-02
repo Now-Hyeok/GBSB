@@ -1,0 +1,19 @@
+package com.gbsb.api.dto;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class TagsDto {
+
+    private Long id;
+    private String name;
+    private String slug;
+    private int count;
+}

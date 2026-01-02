@@ -33,9 +33,11 @@ Content-Type: application/json
 
 ## 공통 사항
 
-### 페이징 응답 형식
+### 응답 형식
 
-모든 리스트 API는 동일한 페이징 형식을 사용합니다:
+**1. 페이징 응답 (목록 조회)**
+
+모든 목록 조회 API는 Spring Boot의 Page 형식을 사용합니다:
 
 ```json
 {
@@ -59,26 +61,42 @@ Content-Type: application/json
 | last | boolean | 마지막 페이지 여부 |
 | first | boolean | 첫 페이지 여부 |
 
-### 단일 응답 형식
+**2. 단일 객체 응답 (상세 조회)**
+
+상세 조회 API는 객체를 직접 반환합니다:
 
 ```json
 {
-  "success": true,
-  "data": {...},
-  "message": "성공"
+  "id": 1,
+  "name": "...",
+  ...
 }
 ```
 
-### 에러 응답 형식
+**3. 배열 응답 (특수 케이스)**
+
+인기 태그 등 제한된 개수의 목록은 배열을 직접 반환합니다:
+
+```json
+[
+  { "id": 1, "name": "..." },
+  { "id": 2, "name": "..." }
+]
+```
+
+**4. 에러 응답**
 
 ```json
 {
-  "success": false,
-  "error": "에러 메시지",
-  "code": "ERROR_CODE",
-  "timestamp": "2024-03-15T10:00:00Z"
+  "timestamp": "2024-03-15T10:00:00Z",
+  "status": 404,
+  "error": "Not Found",
+  "message": "포스트를 찾을 수 없습니다",
+  "path": "/api/posts/999"
 }
 ```
+
+> Spring Boot의 기본 에러 응답 형식을 사용합니다.
 
 ---
 
@@ -160,22 +178,42 @@ GET /api/posts/{id}
 **Path Parameters:**
 - `id` (number, required): 포스트 ID
 
-**Response:** 단일 응답 (Post)
+**Response:** 단일 객체 (Post)
 
 ```json
 {
-  "success": true,
-  "data": {
+  "id": 1,
+  "title": "Spring Cloud Gateway를 이용한 API Gateway 구축기",
+  "summary": "MSA 환경에서 Spring Cloud Gateway를 도입하고...",
+  "url": "https://techblog.woowahan.com/...",
+  "publishedAt": "2024-03-15T09:00:00Z",
+  "createdAt": "2024-03-15T09:00:00Z",
+  "updatedAt": "2024-03-15T09:00:00Z",
+  "companyId": 1,
+  "company": {
     "id": 1,
-    "title": "...",
-    "summary": "...",
-    "url": "...",
-    "publishedAt": "2024-03-15T09:00:00Z",
-    "company": {...},
-    "category": {...},
-    "tags": [...],
-    "viewCount": 1523
-  }
+    "name": "Woowa Bros",
+    "nameKo": "배달의민족",
+    "slug": "woowabros",
+    "logoUrl": "https://...",
+    "blogUrl": "https://techblog.woowahan.com"
+  },
+  "categoryId": 1,
+  "category": {
+    "id": 1,
+    "name": "개발",
+    "slug": "development",
+    "icon": "💻"
+  },
+  "tags": [
+    {
+      "id": 1,
+      "name": "Backend",
+      "slug": "backend"
+    }
+  ],
+  "viewCount": 1523,
+  "thumbnailUrl": null
 }
 ```
 
@@ -289,24 +327,21 @@ GET /api/companies/{id}
 **Path Parameters:**
 - `id` (number, required): 기업 ID
 
-**Response:** 단일 응답 (Company)
+**Response:** 단일 객체 (Company)
 
 ```json
 {
-  "success": true,
-  "data": {
-    "id": 1,
-    "name": "Woowa Bros",
-    "nameKo": "배달의민족",
-    "slug": "woowabros",
-    "description": "우아한형제들 기술 블로그",
-    "logoUrl": "https://...",
-    "blogUrl": "https://techblog.woowahan.com",
-    "color": "#2AC1BC",
-    "isActive": true,
-    "createdAt": "2024-01-01T00:00:00Z",
-    "updatedAt": "2024-01-01T00:00:00Z"
-  }
+  "id": 1,
+  "name": "Woowa Bros",
+  "nameKo": "배달의민족",
+  "slug": "woowabros",
+  "description": "우아한형제들 기술 블로그",
+  "logoUrl": "https://...",
+  "blogUrl": "https://techblog.woowahan.com",
+  "color": "#2AC1BC",
+  "isActive": true,
+  "createdAt": "2024-01-01T00:00:00Z",
+  "updatedAt": "2024-01-01T00:00:00Z"
 }
 ```
 
@@ -320,12 +355,19 @@ GET /api/companies/{id}
 GET /api/tags
 ```
 
-**Response:** 단일 응답 (Tag[])
+**Query Parameters:**
+
+| 파라미터 | 타입 | 필수 | 기본값 | 설명 |
+|----------|------|------|--------|------|
+| page | number | X | 0 | 페이지 번호 (0부터 시작) |
+| size | number | X | 50 | 페이지 크기 |
+| sort | string | X | count | 정렬 (count: 사용 빈도순, name: 이름순) |
+
+**Response:** 페이징 응답 (Tag[])
 
 ```json
 {
-  "success": true,
-  "data": [
+  "content": [
     {
       "id": 1,
       "name": "Backend",
@@ -338,7 +380,13 @@ GET /api/tags
       "slug": "frontend",
       "count": 98
     }
-  ]
+  ],
+  "page": 0,
+  "size": 50,
+  "totalElements": 45,
+  "totalPages": 1,
+  "last": true,
+  "first": true
 }
 ```
 
@@ -354,7 +402,24 @@ GET /api/tags/popular
 |----------|------|------|--------|------|
 | limit | number | X | 10 | 조회할 태그 개수 |
 
-**Response:** 단일 응답 (Tag[])
+**Response:** 배열 응답 (Tag[])
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Backend",
+    "slug": "backend",
+    "count": 145
+  },
+  {
+    "id": 2,
+    "name": "Frontend",
+    "slug": "frontend",
+    "count": 98
+  }
+]
+```
 
 ---
 
@@ -366,12 +431,19 @@ GET /api/tags/popular
 GET /api/categories
 ```
 
-**Response:** 단일 응답 (Category[])
+**Query Parameters:**
+
+| 파라미터 | 타입 | 필수 | 기본값 | 설명 |
+|----------|------|------|--------|------|
+| page | number | X | 0 | 페이지 번호 (0부터 시작) |
+| size | number | X | 20 | 페이지 크기 |
+| sort | string | X | name | 정렬 (name: 이름순, count: 포스트 수순) |
+
+**Response:** 페이징 응답 (Category[])
 
 ```json
 {
-  "success": true,
-  "data": [
+  "content": [
     {
       "id": 1,
       "name": "개발",
@@ -390,7 +462,13 @@ GET /api/categories
       "color": "#10b981",
       "count": 120
     }
-  ]
+  ],
+  "page": 0,
+  "size": 20,
+  "totalElements": 8,
+  "totalPages": 1,
+  "last": true,
+  "first": true
 }
 ```
 
@@ -403,7 +481,19 @@ GET /api/categories/{id}
 **Path Parameters:**
 - `id` (number, required): 카테고리 ID
 
-**Response:** 단일 응답 (Category)
+**Response:** 단일 객체 (Category)
+
+```json
+{
+  "id": 1,
+  "name": "개발",
+  "slug": "development",
+  "description": "개발 관련 포스트",
+  "icon": "💻",
+  "color": "#3b82f6",
+  "count": 250
+}
+```
 
 ---
 

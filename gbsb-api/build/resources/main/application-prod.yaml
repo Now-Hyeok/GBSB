@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: api
+
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@limocdv5x2d069pg_medium?TNS_ADMIN=/Users/ijehyeog/Desktop/workspace/oci/wallet/Wallet_LIMOCDV5X2D069PG
+    username: admin
+    password: Lch63877812@
+    hikari:
+      maximum-pool-size: 10

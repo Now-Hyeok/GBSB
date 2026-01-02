@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="eea3ee9f-ed33-4ae8-b96c-04e0dd28687a" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/../api/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/BACKEND_API_SPEC.md" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/BACKEND_API_SPEC.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/.env.development" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/.env.production" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/PROJECT_SUMMARY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/QUICK_START.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/assets/styles/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/AdBanner.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/CategoryCard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/CompanyBadge.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/EmptyState.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/InfiniteScroll.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/LoadingSpinner.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/Pagination.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/PostCard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/RecentPosts.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/ShareButtons.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/common/TagChip.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/layout/SearchModal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/layout/TheFooter.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/layout/TheHeader.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/pages/AboutPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/pages/BookmarksPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/pages/CategoryPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/pages/CompanyPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/pages/HomePage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/pages/NotFoundPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/pages/PostDetailPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/pages/TagPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/router/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/services/api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/services/mockData.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/store/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/store/useBookmarkStore.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/store/useCategoryStore.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/store/useCompanyStore.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/store/useHistoryStore.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/store/usePostStore.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/store/useTagStore.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/store/useUiStore.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/types/env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/types/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/tsconfig.node.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/vite.config.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="api" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="36W3otR7QpWD1kqk9slDMQ65qTc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.api 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.소스 다운로드.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GbsbApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ijehyeog/Desktop/workspace/project/gbsb/gbsb-api/build.gradle&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.gbsb.api.service" />
+      <recent name="com.gbsb.api.dto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gbsb.api.dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ApiApplication">
+    <configuration name="ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gbsb.api.ApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GbsbApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="gbsb.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gbsb.core.GbsbApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.109" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.109" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="물리" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="eea3ee9f-ed33-4ae8-b96c-04e0dd28687a" name="변경" comment="" />
+      <created>1765108677572</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765108677572</updated>
+      <workItem from="1765108678655" duration="3815000" />
+      <workItem from="1765195501808" duration="372000" />
+      <workItem from="1765278934941" duration="17000" />
+      <workItem from="1765984413610" duration="1492000" />
+      <workItem from="1766137967317" duration="7040000" />
+      <workItem from="1767100510344" duration="19204000" />
+      <workItem from="1767362972784" duration="1028000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.BeanCreationException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
