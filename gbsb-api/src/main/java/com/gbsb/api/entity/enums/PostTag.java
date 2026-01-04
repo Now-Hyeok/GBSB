@@ -1,4 +1,4 @@
-package com.gbsb.api.common;
+package com.gbsb.api.entity;
 
 public enum PostTag {
 

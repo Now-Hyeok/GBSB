@@ -1,15 +1,19 @@
-package com.gbsb.api.domain;
+package com.gbsb.api.entity;
 
-import com.gbsb.api.common.PostCategory;
-import com.gbsb.api.common.PostTag;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "posts",schema = "gbsb" )
+@Table(name = "posts", schema = "gbsb")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,7 +48,7 @@ public class Post {
             joinColumns = @JoinColumn(name = "post_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
-    private List<Tags> tags = new ArrayList<>();
+    private List<Tag> tags = new ArrayList<>();
 
     @Column(name = "view_count")
     private Integer viewCount = 0;
@@ -57,6 +61,4 @@ public class Post {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
-
 }

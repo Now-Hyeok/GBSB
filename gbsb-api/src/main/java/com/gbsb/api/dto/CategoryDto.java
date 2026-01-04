@@ -5,23 +5,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CompanyDto {
-
+public class CategoryDto {
     private Long id;
     private String name;
-    private String nameKo;
     private String slug;
     private String description;
-    private String logoUrl;
-    private String blogUrl;
+    private String icon;
     private String color;
-    private Boolean isActive;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private Integer count;
 }
