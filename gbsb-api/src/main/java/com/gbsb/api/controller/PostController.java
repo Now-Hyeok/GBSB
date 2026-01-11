@@ -4,9 +4,11 @@ import com.gbsb.api.dto.PostDto;
 import com.gbsb.api.dto.request.PostRequestDto;
 import com.gbsb.api.dto.request.PostSearchRequestDto;
 import com.gbsb.api.service.PostService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.web.PagedModel;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,7 +19,7 @@ public class PostController {
     private final PostService postService;
 
     @GetMapping("")
-    public ResponseEntity<PagedModel<PostDto>> getPosts(PostRequestDto postRequestDto) {
+    public ResponseEntity<PagedModel<PostDto>> getPosts(@Validated @RequestParam PostRequestDto postRequestDto) {
         return ResponseEntity.ok().body(postService.getPosts(postRequestDto));
     }
 
@@ -42,7 +44,7 @@ public class PostController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<PagedModel<PostDto>> postsSearch(PostSearchRequestDto searchRequestDto) {
+    public ResponseEntity<PagedModel<PostDto>> postsSearch(@Validated @RequestParam PostSearchRequestDto searchRequestDto) {
         return ResponseEntity.ok().body(postService.searchPosts(searchRequestDto));
     }
 

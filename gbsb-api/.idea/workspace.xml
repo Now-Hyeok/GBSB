@@ -5,35 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eea3ee9f-ed33-4ae8-b96c-04e0dd28687a" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/Company.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/Tag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/enums/Sortable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/exception/PostNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/repository/CompanyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/TagService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/impl/PostServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/OAuthAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/enums/CompanyName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/enums/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../docs/BACKEND_API_SPEC.md" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/BACKEND_API_SPEC.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/common/PostCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/enums/PostCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/common/PostTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/enums/PostTag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/controller/CompanyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/controller/PostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/controller/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/controller/TagController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/domain/Company.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/domain/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/domain/Tags.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/dto/CompanyDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/dto/CompanyDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/dto/PostDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/dto/TagsDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/exception/ExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/exception/ExceptionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/PostsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/RssCrawlerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/dto/request/PageRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/dto/request/PageRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/enums/Sortable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/entity/enums/PostSortable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/CompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/TagService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gbsb/api/service/impl/PostServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +67,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -82,35 +83,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.api 빌드.executor": "Run",
-    "Gradle.소스 다운로드.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.ApiApplication.executor": "Run",
-    "Spring Boot.GbsbApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ijehyeog/Desktop/workspace/project/gbsb/gbsb-api/src/main/java/com/gbsb/api/domain/enum",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "프로젝트",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.api 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.소스 다운로드.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GbsbApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ijehyeog/Desktop/workspace/project/gbsb/gbsb-api/src/main/java/com/gbsb/api/domain/enum&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.gbsb.api.entity" />
       <recent name="com.gbsb.api.exception" />
       <recent name="com.gbsb.api.service" />
       <recent name="com.gbsb.api.dto" />
@@ -164,7 +166,9 @@
       <workItem from="1766137967317" duration="7040000" />
       <workItem from="1767100510344" duration="19204000" />
       <workItem from="1767362972784" duration="7944000" />
-      <workItem from="1767534553543" duration="486000" />
+      <workItem from="1767534553543" duration="1070000" />
+      <workItem from="1767606611859" duration="214000" />
+      <workItem from="1768120610993" duration="7918000" />
     </task>
     <servers />
   </component>

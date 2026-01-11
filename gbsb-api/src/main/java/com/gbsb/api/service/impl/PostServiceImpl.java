@@ -61,9 +61,7 @@ public class PostServiceImpl implements PostService {
     public PostDto getPostDetail(Long id) {
         Post post = postRepository.findById(id)
             .orElseThrow(PostNotFoundException::new);
-
         post.setViewCount(post.getViewCount() + 1);
-
         return convertToDto(post);
     }
 
@@ -106,6 +104,16 @@ public class PostServiceImpl implements PostService {
         );
 
         return convertToPagedModel(postPage);
+    }
+
+    @Override
+    public void insertPost(PostDto postDto) {
+        postRepository.save(modelMapper.map(postDto, Post.class));
+    }
+
+    @Override
+    public void insertAllPosts(List<PostDto> postDtos) {
+        postRepository.saveAll(postDtos.stream().map((element) -> modelMapper.map(element, Post.class)).collect(Collectors.toList()));
     }
 
     private Pageable createPageable(int page, int size, String sort) {

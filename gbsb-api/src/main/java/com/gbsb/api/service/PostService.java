@@ -5,6 +5,8 @@ import com.gbsb.api.dto.request.PostRequestDto;
 import com.gbsb.api.dto.request.PostSearchRequestDto;
 import org.springframework.data.web.PagedModel;
 
+import java.util.List;
+
 public interface PostService {
 
     PagedModel<PostDto> getPosts(PostRequestDto requestDto);
@@ -18,4 +20,8 @@ public interface PostService {
     PagedModel<PostDto> getPostsByCategory(Long categoryId, PostRequestDto requestDto);
 
     PagedModel<PostDto> searchPosts(PostSearchRequestDto requestDto);
+
+    void insertPost(PostDto postDto);
+
+    void insertAllPosts(List<PostDto> postDtos);
 }

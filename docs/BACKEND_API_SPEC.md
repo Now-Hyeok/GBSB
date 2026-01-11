@@ -570,7 +570,7 @@ interface Category {
 
 ### posts 테이블
 
-```sql
+posts 테이블
 CREATE TABLE posts (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(500) NOT NULL,
@@ -584,18 +584,20 @@ CREATE TABLE posts (
     thumbnail_url VARCHAR(1000),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (company_id) REFERENCES companies(id),
-    FOREIGN KEY (category_id) REFERENCES categories(id),
-    INDEX idx_published_at (published_at DESC),
-    INDEX idx_company_id (company_id),
-    INDEX idx_category_id (category_id),
-    INDEX idx_view_count (view_count DESC)
+
+    CONSTRAINT fk_posts_company
+        FOREIGN KEY (company_id) REFERENCES companies(id),
+
+    CONSTRAINT fk_posts_category
+        FOREIGN KEY (category_id) REFERENCES categories(id),
+
+    INDEX idx_posts_published_at (published_at DESC),
+    INDEX idx_posts_company_id (company_id),
+    INDEX idx_posts_category_id (category_id),
+    INDEX idx_posts_view_count (view_count DESC)
 );
-```
 
-### companies 테이블
-
-```sql
+companies 테이블
 CREATE TABLE companies (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -608,13 +610,11 @@ CREATE TABLE companies (
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    INDEX idx_is_active (is_active)
+
+    INDEX idx_companies_is_active (is_active)
 );
-```
 
-### tags 테이블
-
-```sql
+tags 테이블
 CREATE TABLE tags (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
@@ -622,11 +622,8 @@ CREATE TABLE tags (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
-```
 
-### categories 테이블
-
-```sql
+categories 테이블
 CREATE TABLE categories (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
@@ -637,20 +634,20 @@ CREATE TABLE categories (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
-```
 
-### post_tags 테이블 (다대다 관계)
-
-```sql
+post_tags 테이블 (Posts ↔ Tags 다대다 관계)
 CREATE TABLE post_tags (
     post_id BIGINT NOT NULL,
     tag_id BIGINT NOT NULL,
-    PRIMARY KEY (post_id, tag_id),
-    FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
-    FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
-);
-```
 
+    PRIMARY KEY (post_id, tag_id),
+
+    CONSTRAINT fk_post_tags_post
+        FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
+
+    CONSTRAINT fk_post_tags_tag
+        FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
+);
 ---
 
 ## JPA Entity 예시

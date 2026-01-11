@@ -1,6 +1,6 @@
 package com.gbsb.api.entity.enums;
 
-public enum Sortable {
+public enum PostSortable {
 
     POPULAR,
     LATEST
