@@ -6,6 +6,7 @@ import com.gbsb.api.dto.request.PostSearchRequestDto;
 import com.gbsb.api.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.web.PagedModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -16,10 +17,13 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class PostController {
 
+
+
     private final PostService postService;
 
     @GetMapping("")
     public ResponseEntity<PagedModel<PostDto>> getPosts(@Validated @RequestParam PostRequestDto postRequestDto) {
+
         return ResponseEntity.ok().body(postService.getPosts(postRequestDto));
     }
 

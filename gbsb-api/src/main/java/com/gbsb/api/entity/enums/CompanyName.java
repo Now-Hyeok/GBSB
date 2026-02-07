@@ -1,7 +1,9 @@
 package com.gbsb.api.entity.enums;
 
 public enum CompanyName {
-    BAE_MIN("baemin","배달의 민족");
+    BAE_MIN("baemin","배달의 민족"),
+    KAKAO("kakao", "카카오"),
+    TOSS("toss", "토스");
 
     CompanyName(String name, String nameKo) {
         this.name = name;

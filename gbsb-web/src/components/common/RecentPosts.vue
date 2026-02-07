@@ -58,9 +58,7 @@ interface Props {
   limit?: number
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  limit: 5
-})
+const { limit = 5 } = defineProps<Props>()
 
 const historyStore = useHistoryStore()
 

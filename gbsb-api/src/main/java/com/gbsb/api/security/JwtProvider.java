@@ -1,7 +1,12 @@
 package com.gbsb.api.security;
 
-import org.springframework.stereotype.Service;
+import lombok.Value;
+import org.springframework.stereotype.Component;
 
-@Service
+import java.security.Key;
+
+@Component
 public class JwtProvider {
+
+
 }

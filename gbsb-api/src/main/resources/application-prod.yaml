@@ -1,11 +1,18 @@
+# Production environment - Cloud deployment
 spring:
-  application:
-    name: api
-
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@limocdv5x2d069pg_medium?TNS_ADMIN=/Users/ijehyeog/Desktop/workspace/oci/wallet/Wallet_LIMOCDV5X2D069PG
-    username: admin
-    password: Lch63877812@
+    url: jdbc:oracle:thin:@limocdv5x2d069pg_medium?TNS_ADMIN=${TNS_ADMIN}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     hikari:
       maximum-pool-size: 10
+      connection-timeout: 30000
+
+  jpa:
+    show-sql: false
+
+logging:
+  level:
+    com.gbsb: INFO
+    org.hibernate.SQL: WARN

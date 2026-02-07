@@ -1,0 +1,30 @@
+services:
+  gbsb-api:
+    build:
+      context: ./gbsb-api
+    container_name: gbsb-api
+    environment:
+      - SPRING_PROFILES_ACTIVE=local
+      - TNS_ADMIN=/wallet
+      - DB_USERNAME=admin
+      - DB_PASSWORD=Lch63877812@
+    volumes:
+      - /Users/ijehyeog/Desktop/workspace/oci/wallet/Wallet_LIMOCDV5X2D069PG:/wallet:ro
+      - ./gbsb-api/docker-sqlnet.ora:/wallet/sqlnet.ora:ro
+    ports:
+      - "8081:8080"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/actuator/health", "||", "exit", "1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  gbsb-web:
+    build:
+      context: ./gbsb-web
+    container_name: gbsb-web
+    ports:
+      - "8080:80"
+    depends_on:
+      - gbsb-api

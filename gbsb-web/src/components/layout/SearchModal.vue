@@ -98,7 +98,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
-import { useRouter } from 'vue-router'
 import { usePostStore } from '@/store/usePostStore'
 import type { Post } from '@/types'
 import LoadingSpinner from '@/components/common/LoadingSpinner.vue'
@@ -107,7 +106,6 @@ const emit = defineEmits<{
   close: []
 }>()
 
-const router = useRouter()
 const postStore = usePostStore()
 
 const searchInputRef = ref<HTMLInputElement | null>(null)

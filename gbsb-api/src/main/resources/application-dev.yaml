@@ -1,11 +1,17 @@
+# Development environment - IDE local execution
 spring:
-  application:
-    name: api
-
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@limocdv5x2d069pg_high
+    url: jdbc:oracle:thin:@limocdv5x2d069pg_high?TNS_ADMIN=/Users/ijehyeog/Desktop/workspace/oci/wallet/Wallet_LIMOCDV5X2D069PG
     username: admin
     password: Lch63877812@
     hikari:
-      maximum-pool-size: 10
+      maximum-pool-size: 5
+
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    com.gbsb: DEBUG
+    org.hibernate.SQL: DEBUG

@@ -19,7 +19,8 @@ public class CategoryController {
 
     @GetMapping("")
     public ResponseEntity<PagedModel<Category>> getCategories(@Validated @RequestParam PageRequestDto pageRequestDto) {
-        return ResponseEntity.ok().body(categoryService.getCategories(pageRequestDto));
+        PagedModel<Category> categories = categoryService.getCategories(pageRequestDto);
+        return ResponseEntity.ok().body(categories);
     }
 
     @GetMapping("/{id}")
