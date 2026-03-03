@@ -1,15 +1,12 @@
 package com.gbsb.api.service;
 
+import com.gbsb.api.dto.CategoryDto;
 import com.gbsb.api.dto.request.PageRequestDto;
-import com.gbsb.api.entity.Category;
-import org.springframework.data.web.PagedModel;
-
-import java.util.List;
+import com.gbsb.api.dto.response.PageResponse;
 
 public interface CategoryService {
 
-    PagedModel<Category> getCategories(PageRequestDto pageRequestDto);
+    PageResponse<CategoryDto> getCategories(PageRequestDto pageRequestDto);
 
-    Category getCategoryDetail(Long id);
-
+    CategoryDto getCategoryDetail(Long id);
 }

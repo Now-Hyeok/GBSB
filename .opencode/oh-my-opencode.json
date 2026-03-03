@@ -1,0 +1,61 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "anthropic/claude-opus-4-6"
+    },
+    "oracle": {
+      "model": "anthropic/claude-opus-4-6",
+      "fallback": "google/gemini-1.5-pro"
+    },
+    "librarian": {
+      "model": "ollama/mannix/deepseek-coder-v2-lite-instruct:latest"
+    },
+    "explore": {
+      "model": "ollama/mannix/deepseek-coder-v2-lite-instruct:latest"
+    },
+    "multimodal-looker": {
+      "model": "google/gemini-1.5-pro"
+    },
+    "pro-previewmetheus": {
+      "model": "google/gemini-1.5-pro",
+      "fallback": "anthropic/claude-opus-4-6"
+    },
+    "metis": {
+      "model": "google/gemini-1.5-pro"
+    },
+    "momus": {
+      "model": "google/gemini-1.5-pro"
+    },
+    "atlas": {
+      "model": "ollama/mannix/deepseek-coder-v2-lite-instruct:latest",
+      "fallback": "google/gemini-1.5-pro"
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "google/gemini-1.5-pro"
+    },
+    "ultrabrain": {
+      "model": "anthropic/claude-opus-4-6",
+      "fallback": "google/gemini-1.5-pro"
+    },
+    "artistry": {
+      "model": "google/gemini-1.5-pro"
+    },
+    "quick": {
+      "model": "ollama/mannix/deepseek-coder-v2-lite-instruct:latest"
+    },
+    "unspecified-low": {
+      "model": "ollama/mannix/deepseek-coder-v2-lite-instruct:latest"
+    },
+    "unspecified-high": {
+      "model": "google/gemini-1.5-pro",
+      "fallback": "anthropic/claude-opus-4-6"
+    },
+    "writing": {
+      "model": "ollama/mannix/deepseek-coder-v2-lite-instruct:latest",
+      "fallback": "google/gemini-1.5-pro"
+    }
+  }
+}

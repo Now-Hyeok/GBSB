@@ -1,6 +1,7 @@
 package com.gbsb.api.crawler.impl;
 
 import com.gbsb.api.crawler.PostCrawler;
+import com.gbsb.api.crawler.util.DateParseUtil;
 import com.gbsb.api.dto.PostDto;
 import com.gbsb.api.dto.TagDto;
 import com.gbsb.api.entity.Company;
@@ -17,11 +18,9 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -133,13 +132,7 @@ public class TossCrawler implements PostCrawler {
             if (dateStr.isEmpty()) {
                 dateStr = dateElement.text();
             }
-            try {
-                LocalDateTime publishedAt = parseDate(dateStr);
-                post.setPublishedAt(publishedAt);
-            } catch (Exception e) {
-                log.debug("Failed to parse date: {}", dateStr);
-                post.setPublishedAt(LocalDateTime.now());
-            }
+            post.setPublishedAt(DateParseUtil.parse(dateStr));
         } else {
             post.setPublishedAt(LocalDateTime.now());
         }
@@ -187,39 +180,6 @@ public class TossCrawler implements PostCrawler {
         return posts.stream().anyMatch(p -> p.getUrl().equals(newPost.getUrl()));
     }
 
-    private LocalDateTime parseDate(String dateStr) {
-        if (dateStr == null || dateStr.isEmpty()) {
-            return LocalDateTime.now();
-        }
-
-        // ISO 8601 형식 시도
-        if (dateStr.contains("T")) {
-            try {
-                return LocalDateTime.parse(dateStr.substring(0, 19));
-            } catch (Exception e) {
-                // 계속 진행
-            }
-        }
-
-        // 다양한 날짜 형식 시도
-        String[] patterns = {
-                "yyyy-MM-dd HH:mm:ss",
-                "yyyy-MM-dd",
-                "yyyy.MM.dd",
-                "yyyy/MM/dd",
-                "MM/dd/yyyy"
-        };
-
-        for (String pattern : patterns) {
-            try {
-                return LocalDateTime.parse(dateStr, DateTimeFormatter.ofPattern(pattern));
-            } catch (Exception e) {
-                // 다음 패턴 시도
-            }
-        }
-
-        return LocalDateTime.now();
-    }
 
     @Override
     public CompanyName getCompanyName() {

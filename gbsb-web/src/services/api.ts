@@ -12,7 +12,7 @@ import type {
 
 class ApiService {
   private client: AxiosInstance
-  private useMock: boolean = true // Set to false when backend is ready
+  private useMock: boolean = import.meta.env.VITE_USE_MOCK !== 'false'
 
   constructor() {
     this.client = axios.create({

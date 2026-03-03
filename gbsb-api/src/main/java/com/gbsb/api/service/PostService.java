@@ -3,23 +3,23 @@ package com.gbsb.api.service;
 import com.gbsb.api.dto.PostDto;
 import com.gbsb.api.dto.request.PostRequestDto;
 import com.gbsb.api.dto.request.PostSearchRequestDto;
-import org.springframework.data.web.PagedModel;
+import com.gbsb.api.dto.response.PageResponse;
 
 import java.util.List;
 
 public interface PostService {
 
-    PagedModel<PostDto> getPosts(PostRequestDto requestDto);
+    PageResponse<PostDto> getPosts(PostRequestDto requestDto);
 
     PostDto getPostDetail(Long id);
 
-    PagedModel<PostDto> getPostsByCompany(Long companyId, PostRequestDto requestDto);
+    PageResponse<PostDto> getPostsByCompany(Long companyId, PostRequestDto requestDto);
 
-    PagedModel<PostDto> getPostsByTag(String tagSlug, PostRequestDto requestDto);
+    PageResponse<PostDto> getPostsByTag(String tagSlug, PostRequestDto requestDto);
 
-    PagedModel<PostDto> getPostsByCategory(Long categoryId, PostRequestDto requestDto);
+    PageResponse<PostDto> getPostsByCategory(Long categoryId, PostRequestDto requestDto);
 
-    PagedModel<PostDto> searchPosts(PostSearchRequestDto requestDto);
+    PageResponse<PostDto> searchPosts(PostSearchRequestDto requestDto);
 
     void insertPost(PostDto postDto);
 

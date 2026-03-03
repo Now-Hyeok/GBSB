@@ -16,7 +16,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PagedModel;
+import com.gbsb.api.dto.response.PageResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,7 +32,7 @@ public class PostServiceImpl implements PostService {
     private final ModelMapper modelMapper;
 
     @Override
-    public PagedModel<PostDto> getPosts(PostRequestDto requestDto) {
+    public PageResponse<PostDto> getPosts(PostRequestDto requestDto) {
         Pageable pageable = createPageable(requestDto.getPage(), requestDto.getSize(), requestDto.getSort());
 
         Page<Post> postPage;
@@ -53,44 +53,44 @@ public class PostServiceImpl implements PostService {
             postPage = postRepository.findAll(pageable);
         }
 
-        return convertToPagedModel(postPage);
+        return convertToPageResponse(postPage);
     }
 
     @Override
     @Transactional
     public PostDto getPostDetail(Long id) {
         Post post = postRepository.findById(id)
-            .orElseThrow(PostNotFoundException::new);
+            .orElseThrow(() -> new PostNotFoundException(id));
         post.setViewCount(post.getViewCount() + 1);
         return convertToDto(post);
     }
 
     @Override
-    public PagedModel<PostDto> getPostsByCompany(Long companyId, PostRequestDto requestDto) {
+    public PageResponse<PostDto> getPostsByCompany(Long companyId, PostRequestDto requestDto) {
         Pageable pageable = createPageable(requestDto.getPage(), requestDto.getSize(), requestDto.getSort());
         Page<Post> postPage = postRepository.findByCompanyId(companyId, pageable);
 
-        return convertToPagedModel(postPage);
+        return convertToPageResponse(postPage);
     }
 
     @Override
-    public PagedModel<PostDto> getPostsByTag(String tagSlug, PostRequestDto requestDto) {
+    public PageResponse<PostDto> getPostsByTag(String tagSlug, PostRequestDto requestDto) {
         Pageable pageable = createPageable(requestDto.getPage(), requestDto.getSize(), requestDto.getSort());
         Page<Post> postPage = postRepository.findByTagsSlug(tagSlug, pageable);
 
-        return convertToPagedModel(postPage);
+        return convertToPageResponse(postPage);
     }
 
     @Override
-    public PagedModel<PostDto> getPostsByCategory(Long categoryId, PostRequestDto requestDto) {
+    public PageResponse<PostDto> getPostsByCategory(Long categoryId, PostRequestDto requestDto) {
         Pageable pageable = createPageable(requestDto.getPage(), requestDto.getSize(), requestDto.getSort());
         Page<Post> postPage = postRepository.findByCategoryId(categoryId, pageable);
 
-        return convertToPagedModel(postPage);
+        return convertToPageResponse(postPage);
     }
 
     @Override
-    public PagedModel<PostDto> searchPosts(PostSearchRequestDto requestDto) {
+    public PageResponse<PostDto> searchPosts(PostSearchRequestDto requestDto) {
         Pageable pageable = PageRequest.of(
             requestDto.getPage(),
             requestDto.getSize() > 0 ? requestDto.getSize() : 12,
@@ -103,7 +103,7 @@ public class PostServiceImpl implements PostService {
             pageable
         );
 
-        return convertToPagedModel(postPage);
+        return convertToPageResponse(postPage);
     }
 
     @Override
@@ -129,9 +129,9 @@ public class PostServiceImpl implements PostService {
         return PageRequest.of(page, pageSize, sortOrder);
     }
 
-    private PagedModel<PostDto> convertToPagedModel(Page<Post> postPage) {
+    private PageResponse<PostDto> convertToPageResponse(Page<Post> postPage) {
         Page<PostDto> dtoPage = postPage.map(this::convertToDto);
-        return new PagedModel<>(dtoPage);
+        return new PageResponse<>(dtoPage);
     }
 
     private PostDto convertToDto(Post post) {

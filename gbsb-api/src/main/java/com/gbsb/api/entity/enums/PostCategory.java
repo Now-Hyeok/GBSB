@@ -1,4 +1,4 @@
-package com.gbsb.api.entity;
+package com.gbsb.api.entity.enums;
 
 public enum PostCategory {
 
